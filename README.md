@@ -34,5 +34,29 @@ plugins：   webpack插件  插件里面放数组<p>
 css-loader  用来编译css为js<p>
 style       用来编译css用require来加载<p>
 
-module
+module  引用的各个loader装载机的位置<p>
+&nbsp;&nbsp;&nbsp;&nbsp;loader的各个功能：
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test：正则表达式来匹配文件<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loader：我的解释器<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;include/exclude: 手动添加，处理或者不需要处理的一些东西<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;query：为loader提供一些额外的配置,比如插件<p>
+&nbsp;&nbsp;&nbsp;&nbsp;css-loader的时候，如果css引用不到  尝试在前面加!style!css! + 文件路劲<p>
 
+babel的安装和引用（new）<p>
+&nbsp;&nbsp;&nbsp;&nbsp;loader 安装以下包babel-core babel-loader babel-preset-es2015 babel-preset-react<p>
+ 
+js和css分开打包方法<p>
+在主入口的js中提取css然后单独打包css在webpack中使用extract-text-webpack-plugin插件来实现<p>
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

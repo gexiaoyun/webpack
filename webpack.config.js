@@ -3,7 +3,7 @@
  */
 
 var webpack = require("webpack");
-
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports={
     entry: __dirname + "/src/main.js",    //唯一入口文件  __driname  路径
@@ -20,15 +20,35 @@ module.exports={
     },
     module:{
     	loaders:[
+//  		{
+//  			test:/\.css$/,
+//  			loader:'style-loader!css-loader'
+//  		},
+			{
+				test:/\.css$/,
+				loader:ExtractTextPlugin.extract("style-loader","css-loader")
+			},
     		{
-    			test:/\/css$/,
-    			loader:'style-loader!css-loader'
+    			test:/\.less$/,
+    			loader:'style!css!less'
+    		},
+    		{
+    			test:/\.json$/,
+    			loader:'json'
+    		},
+    		{
+    			test:/\.js&/,
+    			exclude:/node_modules/,
+    			loader:'babel',
+    			query:{
+    				presets:['es2015','react']
+    			}
     		}
-    	
     	]
     },
     plugins:[                   //webpack 框架
-    	new webpack.HotModuleReplacementPlugin()
+    	new webpack.HotModuleReplacementPlugin(),
+    	new ExtractTextPlugin("main.css")
     ]            
     	
 

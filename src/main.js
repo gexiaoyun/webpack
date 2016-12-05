@@ -4,9 +4,9 @@
 
 
 //css-loader
-require('style/main.css');
+require('!style!css!./style/main.css');
 
 
 var add = require('./js/add').add;
-add(1,2);
+
 var greet = require('./js/greet');

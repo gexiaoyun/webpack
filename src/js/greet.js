@@ -3,5 +3,13 @@
  */
 
 var $ = require('jquery');
+var stuJson = require('../json/stu.json');
 
-$('#app').html('Hello World ')
+var txt = 'my name is:' + stuJson.name;
+
+
+
+
+
+
+$('#app').html('Hello World' + '<p>'+ txt +'</p>')
