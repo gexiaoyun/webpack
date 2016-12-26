@@ -1,105 +1,117 @@
-¸ù¾İ°Ù¶È´«¿ÎµÄwebpack¿Î³ÌÊÓÆµÁ·Ï°µÄÁ·Ï°ÎÄ¼ş
+ï»¿æ ¹æ®ç™¾åº¦ä¼ è¯¾çš„webpackè¯¾ç¨‹è§†é¢‘ç»ƒä¹ çš„ç»ƒä¹ æ–‡ä»¶
 
-Á·Ï°ÄÚÈİÈçÏÂ£º
+ç»ƒä¹ å†…å®¹å¦‚ä¸‹ï¼š
 
 
 2016/12/01
 
-1¡¢babelµÄ°²×°ºÍÒıÓÃ£¨°üÀ¨babelµÄ°²×°£¬ÒıÓÃ£¬ÅäÖÃ£©<p>
-2¡¢browser-sync ±¾µØ·şÎñÆ÷ÅäÖÃ<p>
-3¡¢browserify js´ò°ü¹¤¾ß£¨ËùÓĞjsÎÄ¼şÍ³Ò»´ò°üÎªÒ»¸öÎÄ¼ş£©<p>
+1ã€babelçš„å®‰è£…å’Œå¼•ç”¨ï¼ˆåŒ…æ‹¬babelçš„å®‰è£…ï¼Œå¼•ç”¨ï¼Œé…ç½®ï¼‰
+2ã€browser-sync æœ¬åœ°æœåŠ¡å™¨é…ç½®
+3ã€browserify jsæ‰“åŒ…å·¥å…·ï¼ˆæ‰€æœ‰jsæ–‡ä»¶ç»Ÿä¸€æ‰“åŒ…ä¸ºä¸€ä¸ªæ–‡ä»¶ï¼‰
 
 
-2016/12/05<p>
+----------
 
-1¡¢webpackµÄ°²×°<p>
-webpack.config.jsÅäÖÃ£º<p>
 
-entry£ºÎ¨Ò»Èë¿ÚÎÄ¼ş<p>
+2016/12/05
 
-Èë¿Ú¿ÉÒÔÓÃjsonĞÎÊ½À´Ìí¼Ó¶à¸öÈë¿Ú£¬±ÈÈç£º
-<p>entry:{</p>
-	<p>app:__dirname + "/src/main.js",    //Î¨Ò»Èë¿ÚÎÄ¼ş  __driname  Â·¾¶</p>
-	<p>query:['jquery']</p>
-<p>},</p>
+1ã€webpackçš„å®‰è£…
+webpack.config.jsé…ç½®ï¼š
 
-output£ºÎÄ¼ş³ö¿Ú<p>
-&nbsp;&nbsp;&nbsp;&nbsp;path£º  Â·¾¶<p>
-&nbsp;&nbsp;&nbsp;&nbsp;filename£º ³ö¿ÚÎÄ¼şµÄÃû³Æ<p>
-&nbsp;&nbsp;&nbsp;&nbsp;publicPath£º ¹«¹²´æ´¢¿Õ¼ä     /temp/<p>
+entryï¼šå”¯ä¸€å…¥å£æ–‡ä»¶
+
+å…¥å£å¯ä»¥ç”¨jsonå½¢å¼æ¥æ·»åŠ å¤šä¸ªå…¥å£ï¼Œæ¯”å¦‚ï¼š
+
+    entry:{
+        app:__dirname + "/src/main.js",    //å”¯ä¸€å…¥å£æ–‡ä»¶  __driname  è·¯å¾„
+    	query:['jquery']
+    },
+
+outputï¼šæ–‡ä»¶å‡ºå£
+pathï¼š  è·¯å¾„
+filenameï¼š å‡ºå£æ–‡ä»¶çš„åç§°
+publicPathï¼š å…¬å…±å­˜å‚¨ç©ºé—´     /temp/
 	
 	
-webpack-dev-server   webpackµÄÒ»¿î±¾µØ·şÎñÆ÷ÒÀÀµ   //ÃüÁî webpack-dev-server --iFrame/--inline --hot<p>
-&nbsp;&nbsp;&nbsp;&nbsp;--iFrame    ÓĞ¿ò¼ÜµÄĞÎÊ½<p>
-&nbsp;&nbsp;&nbsp;&nbsp;--inline    Ã»ÓĞ¿ò¼ÜµÄĞÎÊ½<p>
-&nbsp;&nbsp;&nbsp;&nbsp;--hot        ÈÈ²å°Î //ÓÃinlineµÄÊ±ºò»á¸üĞÂµ±Ç°Ôö¼ÓµÄµØ·½<p>
+webpack-dev-server   webpackçš„ä¸€æ¬¾æœ¬åœ°æœåŠ¡å™¨ä¾èµ–   //å‘½ä»¤ webpack-dev-server --iFrame/--inline --hot
+--iFrame    æœ‰æ¡†æ¶çš„å½¢å¼
+--inline    æ²¡æœ‰æ¡†æ¶çš„å½¢å¼
+--hot        çƒ­æ’æ‹” //ç”¨inlineçš„æ—¶å€™ä¼šæ›´æ–°å½“å‰å¢åŠ çš„åœ°æ–¹<p>
 	
-plugins£º   webpack²å¼ş  ²å¼şÀïÃæ·ÅÊı×é<p>
-&nbsp;&nbsp;&nbsp;&nbsp;new webpack.HotModuleReplacementPlugin()    webpack-dev-serverÈÈ²å°ÎµÄ²å¼şÓ¦ÓÃ<p>
+pluginsï¼š   webpackæ’ä»¶  æ’ä»¶é‡Œé¢æ”¾æ•°ç»„
+new webpack.HotModuleReplacementPlugin()    webpack-dev-serverçƒ­æ’æ‹”çš„æ’ä»¶åº”ç”¨<p>
 	
 	
-css-loader  ÓÃÀ´±àÒëcssÎªjs<p>
-style       ÓÃÀ´±àÒëcssÓÃrequireÀ´¼ÓÔØ<p>
+css-loader  ç”¨æ¥ç¼–è¯‘cssä¸ºjs
+style       ç”¨æ¥ç¼–è¯‘cssç”¨requireæ¥åŠ è½½
 
-module  ÒıÓÃµÄ¸÷¸öloader×°ÔØ»úµÄÎ»ÖÃ<p>
-&nbsp;&nbsp;&nbsp;&nbsp;loaderµÄ¸÷¸ö¹¦ÄÜ£º
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test£ºÕıÔò±í´ïÊ½À´Æ¥ÅäÎÄ¼ş<p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loader£ºÎÒµÄ½âÊÍÆ÷<p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;include/exclude: ÊÖ¶¯Ìí¼Ó£¬´¦Àí»òÕß²»ĞèÒª´¦ÀíµÄÒ»Ğ©¶«Î÷<p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;query£ºÎªloaderÌá¹©Ò»Ğ©¶îÍâµÄÅäÖÃ,±ÈÈç²å¼ş<p>
-&nbsp;&nbsp;&nbsp;&nbsp;css-loaderµÄÊ±ºò£¬Èç¹ûcssÒıÓÃ²»µ½  ³¢ÊÔÔÚÇ°Ãæ¼Ó!style!css! + ÎÄ¼şÂ·¾¢<p>
+module  å¼•ç”¨çš„å„ä¸ªloaderè£…è½½æœºçš„ä½ç½®
+loaderçš„å„ä¸ªåŠŸèƒ½ï¼š
+testï¼šæ­£åˆ™è¡¨è¾¾å¼æ¥åŒ¹é…æ–‡ä»¶
+loaderï¼šæˆ‘çš„è§£é‡Šå™¨
+include/exclude: æ‰‹åŠ¨æ·»åŠ ï¼Œå¤„ç†æˆ–è€…ä¸éœ€è¦å¤„ç†çš„ä¸€äº›ä¸œè¥¿
+queryï¼šä¸ºloaderæä¾›ä¸€äº›é¢å¤–çš„é…ç½®,æ¯”å¦‚æ’ä»¶
+css-loaderçš„æ—¶å€™ï¼Œå¦‚æœcsså¼•ç”¨ä¸åˆ°  å°è¯•åœ¨å‰é¢åŠ !style!css! + æ–‡ä»¶è·¯åŠ²
 
-babelµÄ°²×°ºÍÒıÓÃ£¨new£©<p>
-&nbsp;&nbsp;&nbsp;&nbsp;loader °²×°ÒÔÏÂ°übabel-core babel-loader babel-preset-es2015 babel-preset-react<p>
- 
-jsºÍcss·Ö¿ª´ò°ü·½·¨<p>
-ÔÚÖ÷Èë¿ÚµÄjsÖĞÌáÈ¡cssÈ»ºóµ¥¶À´ò°ücssÔÚwebpackÖĞÊ¹ÓÃextract-text-webpack-plugin²å¼şÀ´ÊµÏÖ<p>
-
-
-
-
-<p style="font-size:20px;color:red;">´ò°ühtmlÊä³ö --html-webpack-plugin²å¼ş£º</p>
-
-ÔÚÊ¹ÓÃhtml-webpack-plugin²å¼şµÄÊ±ºò£¬ÏÈÒıÈë
-
-var HtmlWebpackPlugin = require('html-webpack-plugin');  //´ò°ühtml
-
-È»ºóÒª¸Ä±äoutputÖĞµÄpathºÍfilennameµÄÖµ£¬Èç£º
-
-<p>output:{    	</p>
-  <p>path: __dirname + "/build/js",</p>
-  <p>filename:"/main.js"   </p>
-<p>},</p>
-¸ÄÎª
-<p>output:{    	</p>
-  <p>path: __dirname + "/build/",</p>
-  <p>filename:"js/main.js"   </p>
-<p>},</p>
-
-Èç¹ûcssºÍjs·Ö¿ª´ò°üµÄ»°£¬var extractCss = new ExtractTextPlugin('css/main.css'); //ÈÃ´ò°üºÃµÄcss·Åµ½ÁíÒ»¸öÎÄ¼ş¼Ğ
-css±£´æÂ·¾¶Ò²ÒªĞŞ¸Ä
-
-
-²¢ÔÚ²å¼ş¿éÊ¹ÓÃnew HtmlWebpackPlugin() À´Ê¹ÓÃ²å¼ş£¬²å¼şÀïÃæ¿ÉÒÔÍ¨¹ıÒÔÏÂ·½Ê½À´¼ÓÔØÄ£°å
-<p>new HtmlWebpackPlugin({</p>
-	<p>filename:'../index.html', //ÉèÖÃ´ò°üºóµÄhtml·ÅµÄÂ·¾¶</p>
-	<p>inject:'body',  //°ÑtemplateµÄÇ¶Èëµ½bodyÀïÃæ</p>
-	<p>template:__dirname + '/src/tpl/appIndex.html',  ¶ÁÈ¡Ä£°å</p>
-<p>})</p>
+**babelçš„å®‰è£…å’Œå¼•ç”¨ï¼ˆnewï¼‰**
+loader å®‰è£…ä»¥ä¸‹åŒ…babel-core babel-loader babel-preset-es2015 babel-preset-react
  
  
+**jså’Œcssåˆ†å¼€æ‰“åŒ…æ–¹æ³•**
+åœ¨ä¸»å…¥å£çš„jsä¸­æå–cssç„¶åå•ç‹¬æ‰“åŒ…cssåœ¨webpackä¸­ä½¿ç”¨extract-text-webpack-pluginæ’ä»¶æ¥å®ç°
+
+
+----------
+
+
+2016/12/26
+
+**æ‰“åŒ…htmlè¾“å‡º --html-webpack-pluginæ’ä»¶ï¼š**
+
+åœ¨ä½¿ç”¨html-webpack-pluginæ’ä»¶çš„æ—¶å€™ï¼Œå…ˆå¼•å…¥
+
+var HtmlWebpackPlugin = require('html-webpack-plugin');  //æ‰“åŒ…html
+
+ç„¶åè¦æ”¹å˜outputä¸­çš„pathå’Œfilennameçš„å€¼ï¼Œå¦‚ï¼š
+
+    output:{    	
+      path: __dirname + "/build/js",
+      filename:"/main.js"   
+    },
+
+æ”¹ä¸º
+
+    output:{    	
+      path: __dirname + "/build/",
+      filename:"js/main.js"   
+    },
+
+å¦‚æœcsså’Œjsåˆ†å¼€æ‰“åŒ…çš„è¯ï¼Œvar extractCss = new ExtractTextPlugin('css/main.css'); //è®©æ‰“åŒ…å¥½çš„cssæ”¾åˆ°å¦ä¸€ä¸ªæ–‡ä»¶å¤¹
+cssä¿å­˜è·¯å¾„ä¹Ÿè¦ä¿®æ”¹
+
+å¹¶åœ¨æ’ä»¶å—ä½¿ç”¨new HtmlWebpackPlugin() æ¥ä½¿ç”¨æ’ä»¶ï¼Œæ’ä»¶é‡Œé¢å¯ä»¥é€šè¿‡ä»¥ä¸‹æ–¹å¼æ¥åŠ è½½æ¨¡æ¿
+
+    new HtmlWebpackPlugin({
+    	filename:'../index.html', //è®¾ç½®æ‰“åŒ…åçš„htmlæ”¾çš„è·¯å¾„
+    	inject:'body',  //æŠŠtemplateçš„åµŒå…¥åˆ°bodyé‡Œé¢
+        template:__dirname + '/src/tpl/appIndex.ht`æ­¤å¤„è¾“å…¥ä»£ç `ml',  è¯»å–æ¨¡æ¿
+    })
+
  
-<p style="font-size:20px;color:red;">webpackÑ¹ËõjsÎÄ¼ş -- npm install uglify-js -g</p>
  
- Ê¹ÓÃ·½·¨£ºuglifyjs xxx(ÒªÑ¹ËõÎÄ¼şÂ·¾¢¼ÓÃû³Æ) -o (ÒªÑ¹ËõÎÄ¼şÂ·¾¢¼ÓĞÂÃû³Æ)
- Ê¹ÓÃ·½·¨£ºuglifyjs xxx(ÒªÑ¹ËõÎÄ¼şÂ·¾¢¼ÓÃû³Æ) -m  -o (ÒªÑ¹ËõÎÄ¼şÂ·¾¢¼ÓĞÂÃû³Æ)
  
- ¹Ù·½ÍÆ¼öÊ¹ÓÃugliflyjsµÄ·½·¨£º£¨×Ô¶¯Ñ¹Ëõjs£©
- <p>new webpack.optimize.UglifyJsPlugin({</p>
-	<p>compress: {</p>
-		<p>warnings: false</p>
-	<p>}</p>
-<p>})</p>
+**webpackå‹ç¼©jsæ–‡ä»¶ -- npm install uglify-js -g**
+ 
+ ä½¿ç”¨æ–¹æ³•ï¼šuglifyjs xxx(è¦å‹ç¼©æ–‡ä»¶è·¯åŠ²åŠ åç§°) -o (è¦å‹ç¼©æ–‡ä»¶è·¯åŠ²åŠ æ–°åç§°)
+ ä½¿ç”¨æ–¹æ³•ï¼šuglifyjs xxx(è¦å‹ç¼©æ–‡ä»¶è·¯åŠ²åŠ åç§°) -m  -o (è¦å‹ç¼©æ–‡ä»¶è·¯åŠ²åŠ æ–°åç§°)
+ 
+ å®˜æ–¹æ¨èä½¿ç”¨ugliflyjsçš„æ–¹æ³•ï¼šï¼ˆè‡ªåŠ¨å‹ç¼©jsï¼‰
+
+    new webpack.optimize.UglifyJsPlugin({
+    	compress: {
+        	warnings: false
+        }
+    })
 
 
 
