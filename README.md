@@ -18,10 +18,10 @@ webpack.config.js配置：<p>
 entry：唯一入口文件<p>
 
 入口可以用json形式来添加多个入口，比如：
-entry:{
-	app:__dirname + "/src/main.js",    //唯一入口文件  __driname  路径
-	query:['jquery']
-},
+<p>entry:{</p>
+	<p>app:__dirname + "/src/main.js",    //唯一入口文件  __driname  路径</p>
+	<p>query:['jquery']</p>
+<p>},</p>
 
 output：文件出口<p>
 &nbsp;&nbsp;&nbsp;&nbsp;path：  路径<p>
@@ -66,26 +66,26 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');  //打包html
 
 然后要改变output中的path和filenname的值，如：
 
-output:{    	
-  path: __dirname + "/build/js",
-  filename:"/main.js"   
-},
+<p>output:{    	</p>
+  <p>path: __dirname + "/build/js",</p>
+  <p>filename:"/main.js"   </p>
+<p>},</p>
 改为
-output:{    	
-  path: __dirname + "/build/",
-  filename:"js/main.js"   
-},
+<p>output:{    	</p>
+  <p>path: __dirname + "/build/",</p>
+  <p>filename:"js/main.js"   </p>
+<p>},</p>
 
 如果css和js分开打包的话，var extractCss = new ExtractTextPlugin('css/main.css'); //让打包好的css放到另一个文件夹
 css保存路径也要修改
 
 
 并在插件块使用new HtmlWebpackPlugin() 来使用插件，插件里面可以通过以下方式来加载模板
-new HtmlWebpackPlugin({
-	filename:'../index.html', //设置打包后的html放的路径
-	inject:'body',  //把template的嵌入到body里面
-	template:__dirname + '/src/tpl/appIndex.html',  读取模板
-})
+<p>new HtmlWebpackPlugin({</p>
+	<p>filename:'../index.html', //设置打包后的html放的路径</p>
+	<p>inject:'body',  //把template的嵌入到body里面</p>
+	<p>template:__dirname + '/src/tpl/appIndex.html',  读取模板</p>
+<p>})</p>
  
  
  
@@ -95,11 +95,11 @@ new HtmlWebpackPlugin({
  使用方法：uglifyjs xxx(要压缩文件路劲加名称) -m  -o (要压缩文件路劲加新名称)
  
  官方推荐使用ugliflyjs的方法：（自动压缩js）
- new webpack.optimize.UglifyJsPlugin({
-	compress: {
-		warnings: false
-	}
-})
+ <p>new webpack.optimize.UglifyJsPlugin({</p>
+	<p>compress: {</p>
+		<p>warnings: false</p>
+	<p>}</p>
+<p>})</p>
 
 
 
