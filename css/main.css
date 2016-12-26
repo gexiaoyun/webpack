@@ -1,4 +1,6 @@
-@import url("./font.less");
+body{
+	font-size:200%
+}
 body {
 	background-color: blanchedalmond;
 }

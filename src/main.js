@@ -3,8 +3,9 @@
  */
 
 
+
 //css-loader
-require('!style!css!./style/main.css');
+require('./style/main.css');
 
 
 var add = require('./js/add').add;
