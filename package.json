@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --inline --hot"
+    "inline": "webpack-dev-server --inline --hot",
+    "iframe": "webpack-dev-server --iFrame --hot",
+    "pro": "set NODE_ENV=pro&& webpack",
+    "dev": "set NODE_ENV=dev&& webpack"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +20,8 @@
     "browserify": "^13.1.1",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.24.1",
     "jquery": "^3.1.1",
     "json-loader": "^0.5.4",
@@ -24,6 +29,7 @@
     "less-loader": "^2.2.3",
     "style-loader": "^0.13.1",
     "uglify-js": "^2.7.5",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
   }
